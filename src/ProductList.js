@@ -21,14 +21,13 @@ export default class ProductList extends Component {
           </thead>
           <tbody>
             {this.props.products.map(product => (
-              <tr
-                key={product.id}
-              >  <th scope="row"> {product.id} </th>
+              <tr key={product.id}>
+                <th scope="row"> {product.id} </th>
                 <td>{product.productName}</td>
                 <td>{product.unitPrice}</td>
                 <td>{product.quantityPerUnit}</td>
                 <td>{product.unitsInStock}</td>
-                <td><Button onClick={()=>this.props.addToCart(product)} color="info" outline >Add </Button></td>
+                <td><Button onClick={() => this.props.addToCart(product)} color="info" outline >Add </Button></td>
               </tr>
             ))}
           </tbody>
