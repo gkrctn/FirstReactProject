@@ -11,30 +11,32 @@ import {
 
 export default class CartSummary extends Component {
     renderSummary() {
-        return (<UncontrolledDropdown
-            inNavbar
-            nav
-        >
-            <DropdownToggle
-                caret
+        return (
+            <UncontrolledDropdown
+                inNavbar
                 nav
             >
-                Your Cart
-            </DropdownToggle>
-            <DropdownMenu end>
-                {this.props.cart.map(cartItem => (
-                    <DropdownItem
-                        key={cartItem.product.id}>
-                        {cartItem.product.productName}
-                        <Badge color="success">{cartItem.quantity}</Badge>
+                <DropdownToggle
+                    caret
+                    nav
+                >
+                    Your Cart
+                </DropdownToggle>
+                <DropdownMenu end>
+                    {this.props.cart.map(cartItem => (
+                        <DropdownItem
+                            key={cartItem.product.id}>
+                            <Badge color="danger" onClick={() => this.props.removeFromCart(cartItem.product)}>x</Badge>
+                            {cartItem.product.productName}
+                            <Badge color="success">{cartItem.quantity}</Badge>
+                        </DropdownItem>
+                    ))}
+                    <DropdownItem divider />
+                    <DropdownItem>
+                        Reset
                     </DropdownItem>
-                ))}
-                <DropdownItem divider />
-                <DropdownItem>
-                    Reset
-                </DropdownItem>
-            </DropdownMenu>
-        </UncontrolledDropdown>
+                </DropdownMenu>
+            </UncontrolledDropdown>
         );
     }
     renderEmptyCart() {
