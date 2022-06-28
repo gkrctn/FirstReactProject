@@ -4,9 +4,9 @@ import CategoryList from "./CategoryList";
 import Navi from "./Navi";
 import ProductList from "./ProductList";
 import alertify from 'alertifyjs';
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes , Switch } from "react-router-dom"
 import NotFound from "./NotFound"
-import CartList from './CartList';
+import CartList from "./CartList";
 
 export default class App extends Component {
 
