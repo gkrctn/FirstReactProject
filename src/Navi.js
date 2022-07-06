@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import {
   Collapse,
   Nav,
@@ -44,14 +45,14 @@ export default class Navi extends React.Component {
               navbar
             >
               <NavItem>
-                <NavLink href="/components/">
-                  Components
+                <NavLink to="form1">
+                  Form Demo 1
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
+                <Link href="https://github.com/reactstrap/reactstrap">
                   GitHub
-                </NavLink>
+                </Link>
               </NavItem>
               <CartSummary removeFromCart={this.props.removeFromCart} cart={this.props.cart}  />
             </Nav>
